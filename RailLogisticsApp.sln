@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.Application", "Services\ShipmentTrackingService\Application\ShipmentTrackingService.Application\ShipmentTrackingService.Application.csproj", "{0A0F3049-9FF5-479E-829F-31FED1C8B636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.Domain", "Services\ShipmentTrackingService\Domain\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj", "{42776BA7-E71C-4E8A-8208-CB40FE0687D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.Domain", "Services\ShipmentTrackingService\Domain\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj", "{42776BA7-E71C-4E8A-8208-CB40FE0687D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.Infrastructure", "Services\ShipmentTrackingService\Infrastructure\ShipmentTrackingService.Infrastructure\ShipmentTrackingService.Infrastructure.csproj", "{D4BCEB46-2EBB-499D-84E0-D344A47E123B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.Infrastructure", "Services\ShipmentTrackingService\Infrastructure\ShipmentTrackingService.Infrastructure\ShipmentTrackingService.Infrastructure.csproj", "{D4BCEB46-2EBB-499D-84E0-D344A47E123B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.WebAPI", "ShipmentTrackingService.WebAPI\ShipmentTrackingService.WebAPI.csproj", "{2605D9F5-65A1-4B12-84E7-EC33AD8B5EF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.WebAPI", "Services\ShipmentTrackingService\Presentation\ShipmentTrackingService.WebAPI\ShipmentTrackingService.WebAPI.csproj", "{69C4822D-CEF1-4A12-91FE-9153DAC4654D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{D4BCEB46-2EBB-499D-84E0-D344A47E123B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BCEB46-2EBB-499D-84E0-D344A47E123B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BCEB46-2EBB-499D-84E0-D344A47E123B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2605D9F5-65A1-4B12-84E7-EC33AD8B5EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2605D9F5-65A1-4B12-84E7-EC33AD8B5EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2605D9F5-65A1-4B12-84E7-EC33AD8B5EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2605D9F5-65A1-4B12-84E7-EC33AD8B5EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C4822D-CEF1-4A12-91FE-9153DAC4654D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C4822D-CEF1-4A12-91FE-9153DAC4654D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C4822D-CEF1-4A12-91FE-9153DAC4654D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C4822D-CEF1-4A12-91FE-9153DAC4654D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
