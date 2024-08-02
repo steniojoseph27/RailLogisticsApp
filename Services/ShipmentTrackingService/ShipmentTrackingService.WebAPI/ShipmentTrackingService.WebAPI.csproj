@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\ShipmentTrackingService.Application\ShipmentTrackingService.Application.csproj" />
+    <ProjectReference Include="..\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj" />
   </ItemGroup>
 
 </Project>
