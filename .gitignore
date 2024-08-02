@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Services/ShipmentTrackingService/ShipmentTrackingService.WebAPI/appsettings.json
+/Services/ShipmentTrackingService/ShipmentTrackingService.WebAPI/Properties
+/Services/ShipmentTrackingService/ShipmentTrackingService.WebAPI/appsettings.Development.json
