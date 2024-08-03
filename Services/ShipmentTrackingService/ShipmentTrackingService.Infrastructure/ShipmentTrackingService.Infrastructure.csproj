@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShipmentTrackingService.Application\ShipmentTrackingService.Application.csproj" />
+    <ProjectReference Include="..\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
