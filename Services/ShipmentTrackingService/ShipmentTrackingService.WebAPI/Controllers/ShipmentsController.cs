@@ -35,6 +35,6 @@ namespace ShipmentTrackingService.WebAPI.Controllers
             return CreatedAtAction(nameof(GetShipmentById), new { id = shipment.Id }, shipment);
         }
 
-        // Additional endpoints for update, delete, etc.
+        // TODO - Additional endpoints for update, delete, logger, validations, error handling, and exception handling
     }
 }
