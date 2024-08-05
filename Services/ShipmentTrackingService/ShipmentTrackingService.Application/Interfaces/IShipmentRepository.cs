@@ -4,10 +4,10 @@ namespace ShipmentTrackingService.Application.Interfaces
 {
     public interface IShipmentRepository
     {
-        Task<Shipment> GetShipmentByIdAsync(int id);
-        Task<IEnumerable<Shipment>> GetAllShipmentsAsync();
         Task AddShipmentAsync(Shipment shipment);
+        Task<Shipment> GetShipmentByIdAsync(int shipmentId);
+        Task<IEnumerable<Shipment>> GetAllShipmentsAsync();
         Task UpdateShipmentAsync(Shipment shipment);
-        Task DeleteShipmentAsync(int id);
+        Task DeleteShipmentAsync(int shipmentId);
     }
 }
