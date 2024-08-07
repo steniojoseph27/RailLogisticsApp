@@ -8,7 +8,7 @@ namespace ShipmentTrackingService.Application.Services
         Task<Shipment> CreateShipmentAsync(CreateShipmentRequest request);
         Task<Shipment> GetShipmentByIdAsync(int shipmentId);
         Task<IEnumerable<Shipment>> GetAllShipmentsAsync();
-        Task UpdateShipmentAsync(Shipment shipment);
-        Task DeleteShipmentAsync(int shipmentId);
+        Task<Shipment> UpdateShipmentAsync(UpdateShipmentRequest request);
+        Task<bool> DeleteShipmentAsync(int shipmentId);
     }
 }

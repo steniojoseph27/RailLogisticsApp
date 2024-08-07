@@ -9,13 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+    <PackageReference Include="MySql.Data" Version="9.0.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ShipmentTrackingService.Application\ShipmentTrackingService.Application.csproj" />
     <ProjectReference Include="..\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj" />
+    <ProjectReference Include="..\ShipmentTrackingService.Infrastructure\ShipmentTrackingService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

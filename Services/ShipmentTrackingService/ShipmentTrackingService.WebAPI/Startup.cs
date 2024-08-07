@@ -1,5 +1,16 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using CoreWCF.Configuration;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MySql.Data.MySqlClient;
+using ShipmentTrackingService.Application;
+using ShipmentTrackingService.Application.Interfaces;
+using ShipmentTrackingService.Application.Services;
+using ShipmentTrackingService.Infrastructure;
+using ShipmentTrackingService.Infrastructure.Data;
+using ShipmentTrackingService.Infrastructure.Data.Repositories;
+using System.Data;
 using System.Text.Json;
 
 namespace ShipmentTrackingService.WebAPI
@@ -15,6 +26,18 @@ namespace ShipmentTrackingService.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddWebSocketManager();
+           
+            services.AddTransient<ShipmentDbContext>();
+
+            services.AddScoped<IShipmentRepository, ShipmentRepository>();
+            services.AddScoped<IShipmentService, ShipmentService>();
+
+            //services.AddGraphQLServer()
+            //   .AddQueryType<Query>();
+
+            services.AddServiceModelServices();
+
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
@@ -53,6 +76,8 @@ namespace ShipmentTrackingService.WebAPI
                 app.UseHsts();
             }
 
+            app.UseWebSockets();
+            //app.MapWebSocketManager("/ws", ServiceProvider.GetService<WebSocketHandler>());
 
             app.UseHttpsRedirection();
             app.UseRouting();

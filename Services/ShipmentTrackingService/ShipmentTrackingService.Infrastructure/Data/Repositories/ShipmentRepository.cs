@@ -59,6 +59,4 @@ namespace ShipmentTrackingService.Infrastructure.Data.Repositories
             }
         }
     }
-
-    // TODO - Implement ShipmentEventRepository and RailcarRepository similarly
 }

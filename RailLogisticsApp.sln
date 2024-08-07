@@ -7,21 +7,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{93
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShipmentTrackingService", "ShipmentTrackingService", "{18B7EF4A-EDDC-45F1-A699-79FC27737941}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.WebAPI", "Services\ShipmentTrackingService\ShipmentTrackingService.WebAPI\ShipmentTrackingService.WebAPI.csproj", "{E85DA1FB-7634-4557-8C70-3CFD53E4B875}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.WebAPI", "Services\ShipmentTrackingService\ShipmentTrackingService.WebAPI\ShipmentTrackingService.WebAPI.csproj", "{E85DA1FB-7634-4557-8C70-3CFD53E4B875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.Application", "Services\ShipmentTrackingService\ShipmentTrackingService.Application\ShipmentTrackingService.Application.csproj", "{26FADAA3-C953-496E-BAAC-33BB815F8C0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.Application", "Services\ShipmentTrackingService\ShipmentTrackingService.Application\ShipmentTrackingService.Application.csproj", "{26FADAA3-C953-496E-BAAC-33BB815F8C0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.Domain", "Services\ShipmentTrackingService\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj", "{77700180-259D-4CAA-9C1B-B14A513C420A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.Domain", "Services\ShipmentTrackingService\ShipmentTrackingService.Domain\ShipmentTrackingService.Domain.csproj", "{77700180-259D-4CAA-9C1B-B14A513C420A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipmentTrackingService.Infrastructure", "Services\ShipmentTrackingService\ShipmentTrackingService.Infrastructure\ShipmentTrackingService.Infrastructure.csproj", "{D13C0C3F-5C28-4775-B3A3-0A94711E2DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShipmentTrackingService.Infrastructure", "Services\ShipmentTrackingService\ShipmentTrackingService.Infrastructure\ShipmentTrackingService.Infrastructure.csproj", "{D13C0C3F-5C28-4775-B3A3-0A94711E2DCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{CC876EE0-ADF7-4429-92C5-0BC609E94AE4}"
+	ProjectSection(SolutionItems) = preProject
+		init.sql = init.sql
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1DBDD8AF-82E1-4403-81EC-7586D12D8C83}
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -80,11 +79,17 @@ Global
 		{D13C0C3F-5C28-4775-B3A3-0A94711E2DCD}.Release|x86.ActiveCfg = Release|Any CPU
 		{D13C0C3F-5C28-4775-B3A3-0A94711E2DCD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{18B7EF4A-EDDC-45F1-A699-79FC27737941} = {93D7DC72-8334-4170-8F2D-62B89EE58CF6}
 		{E85DA1FB-7634-4557-8C70-3CFD53E4B875} = {18B7EF4A-EDDC-45F1-A699-79FC27737941}
 		{26FADAA3-C953-496E-BAAC-33BB815F8C0B} = {18B7EF4A-EDDC-45F1-A699-79FC27737941}
 		{77700180-259D-4CAA-9C1B-B14A513C420A} = {18B7EF4A-EDDC-45F1-A699-79FC27737941}
 		{D13C0C3F-5C28-4775-B3A3-0A94711E2DCD} = {18B7EF4A-EDDC-45F1-A699-79FC27737941}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DBDD8AF-82E1-4403-81EC-7586D12D8C83}
 	EndGlobalSection
 EndGlobal

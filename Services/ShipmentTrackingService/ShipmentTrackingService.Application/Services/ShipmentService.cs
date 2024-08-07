@@ -40,18 +40,40 @@ namespace ShipmentTrackingService.Application.Services
             return await _shipmentRepository.GetShipmentByIdAsync(id);
         }
 
-        public async Task UpdateShipmentAsync(Shipment shipment)
+        public Task<Shipment> UpdateShipmentAsync(Shipment shipment)
         {
-            await _shipmentRepository.UpdateShipmentAsync(shipment!);
+            throw new NotImplementedException();
         }
 
-        public async Task DeleteShipmentAsync(int shipmentId)
+        public async Task<Shipment> UpdateShipmentAsync(UpdateShipmentRequest request)
+        {
+            var shipment = await _shipmentRepository.GetShipmentByIdAsync(request.Id);
+            if (shipment == null)
+            {
+                return null;
+            }
+
+            shipment.Origin = request.Origin;
+            shipment.Destination = request.Destination;
+            shipment.EstimatedArrivalTime = request.EstimatedArrivalTime;
+            shipment.CurrentLocation = request.CurrentLocation;
+            shipment.Status = request.Status;
+            shipment.RailcarId = request.RailcarId;
+
+            await _shipmentRepository.UpdateShipmentAsync(shipment);
+            return shipment;
+        }
+
+        public async Task<bool> DeleteShipmentAsync(int shipmentId)
         {
             var shipment = await _shipmentRepository.GetShipmentByIdAsync(shipmentId);
-            if (shipment != null)
+            if (shipment == null)
             {
-                await _shipmentRepository.DeleteShipmentAsync(shipmentId!);
+                return false;
             }
+            
+            await _shipmentRepository.DeleteShipmentAsync(shipmentId!);
+            return true;
         }
     }
 }

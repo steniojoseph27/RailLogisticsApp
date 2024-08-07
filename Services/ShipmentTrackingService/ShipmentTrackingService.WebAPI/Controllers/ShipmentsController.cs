@@ -1,26 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShipmentTrackingService.Application.UseCases;
-using ShipmentTrackingService.Domain.Entities;
-using System.Threading.Tasks;
+using ShipmentTrackingService.Application.Requests;
+using ShipmentTrackingService.Application.Services;
 namespace ShipmentTrackingService.WebAPI.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class ShipmentsController : ControllerBase
     {
-        private readonly GetShipmentDetailsUseCase _getShipmentDetailsUseCase;
-        private readonly CreateShipmentUseCase _createShipmentUseCase;
+        private readonly IShipmentService _shipmentService;
 
-        public ShipmentsController(GetShipmentDetailsUseCase getShipmentDetailsUseCase, CreateShipmentUseCase createShipmentUseCase)
+        public ShipmentsController(IShipmentService shipmentService)
         {
-            _getShipmentDetailsUseCase = getShipmentDetailsUseCase;
-            _createShipmentUseCase = createShipmentUseCase;
+            _shipmentService = shipmentService;
         }
 
+        // POST: api/Shipments
+        [HttpPost]
+        public async Task<IActionResult> CreateShipment(CreateShipmentRequest request)
+        {
+            var shipment = await _shipmentService.CreateShipmentAsync(request);
+            return CreatedAtAction(nameof(GetShipmentById), new { id = shipment.Id }, shipment);
+        }
+
+        // GET: api/Shipments/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetShipmentById(int id)
         {
-            var shipment = await _getShipmentDetailsUseCase.ExecuteAsync(id);
+            var shipment = await _shipmentService.GetShipmentByIdAsync(id);
             if (shipment == null)
             {
                 return NotFound();
@@ -28,13 +34,35 @@ namespace ShipmentTrackingService.WebAPI.Controllers
             return Ok(shipment);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateShipment([FromBody] Shipment shipment)
+        // PUT: api/Shipments/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateShipment(int id, UpdateShipmentRequest request)
         {
-            await _createShipmentUseCase.ExecuteAsync(shipment);
-            return CreatedAtAction(nameof(GetShipmentById), new { id = shipment.Id }, shipment);
+            if (id != request.Id)
+            {
+                return BadRequest();
+            }
+
+            var updatedShipment = await _shipmentService.UpdateShipmentAsync(request);
+            if (updatedShipment == null)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
 
-        // TODO - Additional endpoints for update, delete, logger, validations, error handling, and exception handling
+        // DELETE: api/Shipments/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteShipment(int shipmentId)
+        {
+            var deleted = await _shipmentService.DeleteShipmentAsync(shipmentId);
+            if (!deleted)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
+        }        
     }
 }

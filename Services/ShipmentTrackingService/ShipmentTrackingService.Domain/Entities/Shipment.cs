@@ -9,7 +9,7 @@ namespace ShipmentTrackingService.Domain.Entities
         public string CurrentLocation { get; set; } = string.Empty; 
         public string Status { get; set; } = "Pending"; 
         public int RailcarId { get; set; }
-        public Railcar Railcar { get; set; }
+        public Railcar? Railcar { get; set; } 
         public ICollection<ShipmentEvent> ShipmentEvents { get; set; } = new List<ShipmentEvent>(); 
     }
 }
